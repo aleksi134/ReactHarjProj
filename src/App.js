@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
 
 function App() {
+
+  let taskit = ["jutska 1", "jutska 2", "jutska 3"]
+  
+  const [uusiTaski, paivitaUusiTaski] = useState("jtn")
+  
+  function lisaaTaski() {
+    //tee jtn
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>varmistusheippa</p>
+      <input type="text" value={uusiTaski} />
+      <input type="button" value="Lisää taski" onClick={() => lisaaTaski() } />
+      <ul>
+        { taskit.map(yksittainenTaski => <li>{yksittainenTaski}</li> )}
+      </ul>
+     
     </div>
   );
 }
